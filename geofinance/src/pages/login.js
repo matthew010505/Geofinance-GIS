@@ -1,6 +1,10 @@
-import React, { useState} from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
-import { faEnvelope, faLock } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEnvelope,
+  faLock,
+  faCircleUser,
+} from "@fortawesome/free-solid-svg-icons";
 import {
   faSquareFacebook,
   faSquareXTwitter,
@@ -15,29 +19,48 @@ import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [userName, setUserName] = useState("");
+  const [signUpEmail, setSignUpEmail] = useState("");
+  const [signUpPassword, setSignUpPassword] = useState("");
 
-  const smoothnavigation = () => {
-    const signInBtn = document.querySelector("#sign-in-btn");
-    const signUpBtn = document.querySelector("#sign-up-btn");
-    const container = document.querySelector(".login-container");
+  const containerRef = useRef(null);
 
-    signUpBtn.addEventListener("click", () => {
-      container.classList.add("sign-up-mode");
-    });
+  useEffect(() => {
+    const signUpBtn = document.getElementById("sign-up-btn");
+    const signInBtn = document.getElementById("sign-in-btn");
 
-    signInBtn.addEventListener("click", () => {
-      container.classList.remove("Sign-up-mode");
-    });
-  };
+    const handleSignUpClick = () => {
+      containerRef.current.classList.add("sign-up-mode");
+    };
+
+    const handleSignInClick = () => {
+      containerRef.current.classList.remove("sign-up-mode");
+    };
+
+    signUpBtn.addEventListener("click", handleSignUpClick);
+    signInBtn.addEventListener("click", handleSignInClick);
+
+    return () => {
+      signUpBtn.removeEventListener("click", handleSignUpClick);
+      signInBtn.removeEventListener("click", handleSignInClick);
+    };
+  }, []);
 
   const showpassword = () => {
     document.getElementById("password").type = document.getElementById(
       "showpassword"
     ).checked
-      ? "email"
+      ? "text"
       : "password";
+  };
+
+  const reset = (e) => {
+    e.preventDefault();
+    setEmail("");
+    setPassword("");
   };
 
   const handleSubmit = () => {
@@ -48,7 +71,7 @@ export default function Login() {
   };
 
   return (
-    <div class="login-container">
+    <div class="login-container" ref={containerRef}>
       <div class="forms-container">
         <div class="signin-signup">
           <form
@@ -98,7 +121,7 @@ export default function Login() {
             </div>
             <br />
             <div class="button-container">
-              <button type="reset" id="reset" class="buttons">
+              <button type="reset" id="reset" class="buttons" onClick={reset}>
                 Reset
               </button>
               <button type="submit" class="buttons" onClick={handleSubmit}>
@@ -126,14 +149,47 @@ export default function Login() {
             <h2 class="title">Sign-up</h2>
             <br />
             <div class="input-feild">
+              <FontAwesomeIcon icon={faCircleUser} className="input-icons" />
+              <input
+                type="text"
+                placeholder="UserName"
+                id="userName"
+                name="userName"
+                autoComplete="off"
+                required
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
+              ></input>
+              <br />
+              <br />
+            </div>
+            <div class="input-feild">
               <FontAwesomeIcon icon={faEnvelope} className="input-icons" />
-              <input type="email" placeholder="Email"></input>
+              <input
+                type="email"
+                placeholder="Email"
+                id="sign-up-email"
+                name="sign-up-email"
+                autoComplete="off"
+                required
+                value={signUpEmail}
+                onChange={(e) => setSignUpEmail(e.target.value)}
+              ></input>
               <br />
               <br />
             </div>
             <div class="input-feild">
               <FontAwesomeIcon icon={faLock} className="input-icons" />
-              <input type="password" placeholder="Password"></input>
+              <input
+                type="password"
+                placeholder="Password"
+                id="sign-up-password"
+                name="sign-up-password"
+                autocomplete="off"
+                value={signUpPassword}
+                onChange={(e) => setSignUpPassword(e.target.value)}
+                required
+              ></input>
               <br />
               <br />
             </div>
@@ -173,11 +229,7 @@ export default function Login() {
             <div class="content">
               <h3>New Here!</h3>
               <p>Sign Up!</p>
-              <button
-                class="buttons btn-transparent"
-                id="sign-up-btn"
-                onClick={smoothnavigation}
-              >
+              <button class="btn-transparent" id="sign-up-btn">
                 Sign Up
               </button>
             </div>
@@ -187,7 +239,7 @@ export default function Login() {
             <div class="content">
               <h3>One of us?</h3>
               <p>Sign In!</p>
-              <button class="buttons btn-transparent" id="sign-in-btn">
+              <button class="btn-transparent" id="sign-in-btn">
                 Sign In
               </button>
             </div>
@@ -203,10 +255,13 @@ export default function Login() {
 Tasks:
 
 1.login and signup 
-4. Do authentication
-5. users page customization
-6. Dashboard integrating powerbi
-7. Add interactivity in home page (typing...)
+2. Do authentication
+3. users page customization
+4. Dashboard integrating powerbi
+5. Add interactivity in home page (typing...)
+6.github pull request and cloning
+7. feautres, service card-carousel
+
 */
 
 /*
@@ -215,5 +270,3 @@ Tasks:
     document.getElementById("password").value = "";
   });
   */
-
-
