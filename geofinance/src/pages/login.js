@@ -20,8 +20,6 @@ import { useNavigate } from "react-router-dom";
 export default function Login() {
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [userName, setUserName] = useState("");
   const [signUpEmail, setSignUpEmail] = useState("");
   const [signUpPassword, setSignUpPassword] = useState("");
@@ -57,17 +55,70 @@ export default function Login() {
       : "password";
   };
 
-  const reset = (e) => {
-    e.preventDefault();
-    setEmail("");
-    setPassword("");
+  const signupshowpassword = () => {
+    document.getElementById("sign-up-password").type = document.getElementById(
+      "signupcheckbox"
+    ).checked
+      ? "text"
+      : "password";
   };
 
-  const handleSubmit = () => {
+  const signupreset = (e) => {
+    e.preventDefault();
+    setSignUpEmail("");
+    setSignUpPassword("");
+    setUserName("");
+  };
+
+  const reset = (e) => {
+    e.preventDefault();
+    setSignUpEmail("");
+    setSignUpPassword("");
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
     axios
-      .post("http://localhost:5173/submit", { email, password })
-      .then((result) => console.log(result))
-      .catch((err) => console.log(err));
+      .post("http://localhost:5173/login", { 
+        signUpEmail, 
+        signUpPassword 
+      })
+
+      .then((result) => {
+        console.log(result);
+        if(result.data==="Success"){
+          navigate("/dashboard");
+        }else if(result.data==="the password is incorrect"){
+          window.alert("the password is incorrect");
+        }else{
+          window.alert("No record existed");
+        }
+      })
+
+      .catch((err) => {
+        console.log(err);
+        window.alert(err.response?.data.message || "Internal Server Error");
+      });
+  };
+
+  const handleSignUpSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:5173/submit", {
+        userName,
+        signUpEmail,
+        signUpPassword,
+      })
+
+      .then((result) => {
+        console.log(result);
+        navigate("/dashboard");
+      })
+
+      .catch((err) => {
+        console.log(err);
+        window.alert(err.response?.data.message || "Internal Server Error");
+      });
   };
 
   return (
@@ -75,7 +126,7 @@ export default function Login() {
       <div class="forms-container">
         <div class="signin-signup">
           <form
-            onSubmit={() => navigate("/dashboard")}
+            /*</div>onSubmit={() => navigate("/dashboard")}*/
             class="sign-in-form"
             id="forms"
           >
@@ -87,11 +138,11 @@ export default function Login() {
                 type="email"
                 id="email"
                 name="email"
-                value={email}
+                value={signUpEmail}
                 placeholder="Email"
                 autoComplete="off"
                 required
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => setSignUpEmail(e.target.value)}
               ></input>
               <br />
               <br />
@@ -104,9 +155,9 @@ export default function Login() {
                 name="password"
                 placeholder="Password"
                 autoComplete="off"
-                value={password}
+                value={signUpPassword}
                 required
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => setSignUpPassword(e.target.value)}
               ></input>
               <br />
               <br />
@@ -145,7 +196,7 @@ export default function Login() {
               </a>
             </div>
           </form>
-          <form action="" class="sign-up-form">
+          <form class="sign-up-form">
             <h2 class="title">Sign-up</h2>
             <br />
             <div class="input-feild">
@@ -194,15 +245,28 @@ export default function Login() {
               <br />
             </div>
             <div class="checkbox">
-              <input type="checkbox"></input>
+              <input
+                type="checkbox"
+                id="signupcheckbox"
+                onClick={signupshowpassword}
+              ></input>
               <label>Show Password</label>
             </div>
             <br />
             <div class="button-container">
-              <button type="reset" class="buttons">
+              <button
+                type="reset"
+                class="buttons"
+                id="signupreset"
+                onClick={signupreset}
+              >
                 Reset
               </button>
-              <button type="submit" class="buttons">
+              <button
+                type="submit"
+                class="buttons"
+                onClick={handleSignUpSubmit}
+              >
                 SignUp
               </button>
             </div>
@@ -253,20 +317,10 @@ export default function Login() {
 
 /*
 Tasks:
-
-1.login and signup 
 2. Do authentication
 3. users page customization
 4. Dashboard integrating powerbi
 5. Add interactivity in home page (typing...)
 6.github pull request and cloning
 7. feautres, service card-carousel
-
 */
-
-/*
-  document.getElementById("reset").addEventListener("click", () => {
-    document.getElementById("email").value = "";
-    document.getElementById("password").value = "";
-  });
-  */
