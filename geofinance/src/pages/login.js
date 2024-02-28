@@ -19,7 +19,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const navigate = useNavigate();
-
   const [userName, setUserName] = useState("");
   const [signUpEmail, setSignUpEmail] = useState("");
   const [signUpPassword, setSignUpPassword] = useState("");
@@ -87,11 +86,12 @@ export default function Login() {
       .then((result) => {
         console.log(result);
         if(result.data==="Success"){
+          window.alert("Logged in Successfully")
           navigate("/dashboard");
         }else if(result.data==="the password is incorrect"){
           window.alert("the password is incorrect");
         }else{
-          window.alert("No record existed");
+          window.alert("Invalid Credentials");
         }
       })
 
@@ -317,10 +317,10 @@ export default function Login() {
 
 /*
 Tasks:
-2. Do authentication
+1.Adding readme file
 3. users page customization
 4. Dashboard integrating powerbi
 5. Add interactivity in home page (typing...)
-6.github pull request and cloning
+6.github fork,pull request,merge d ba ,e d', and cloning
 7. feautres, service card-carousel
 */

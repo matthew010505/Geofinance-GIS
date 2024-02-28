@@ -167,7 +167,7 @@ input[type="checkbox"] {
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  color: #333;
+  color:#333;
   font-size: 1.1rem;
   border-radius: 50%;
   transition: 0.3s ease;
@@ -244,6 +244,11 @@ input[type="checkbox"] {
   font-weight: 500;
   transition: 0.3s ease;
   color: white;
+  transition: 0.3s ease;
+}
+
+.btn-transparent:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .right-panel .content,
@@ -310,7 +315,7 @@ input[type="checkbox"] {
     left: 50%;
     top: 95%;
     transform: translate(-50%, -100%);
-    transition:1s 0.8s ease-in-out;
+    transition: 1s 0.8s ease-in-out;
   }
 
   .pannel-container {
@@ -327,7 +332,7 @@ input[type="checkbox"] {
 
   .pannel .content {
     padding-right: 15%;
-    transition:0.9s 0.8s ease-in-out;
+    transition: 0.9s 0.8s ease-in-out;
   }
 
   .pannel h3 {
@@ -347,7 +352,7 @@ input[type="checkbox"] {
 
   .images {
     width: 200px;
-    transition:0.9s 0.6s ease-in-out;
+    transition: 0.9s 0.6s ease-in-out;
   }
 
   .left-panel {
@@ -363,43 +368,44 @@ input[type="checkbox"] {
     transform: translateY(300px);
   }
 
-  .login-container.sign-up-mode:before{
-    transform:translate(-50%,100%);
-    bottom:32%;
-    right:initial;
+  .login-container.sign-up-mode:before {
+    transform: translate(-50%, 100%);
+    bottom: 32%;
+    right: initial;
   }
 
-  .login-container.sign-up-mode .left-panel .images,.login-container.sign-up-mode .left-panel .content{
-    transform:translateY(-300px);
+  .login-container.sign-up-mode .left-panel .images,
+  .login-container.sign-up-mode .left-panel .content {
+    transform: translateY(-300px);
   }
 
-  .login-container.sign-up-mode .signin-signup{
-    top:5%;
-    transform:translate(-50%,0);
-    left:50%;
+  .login-container.sign-up-mode .signin-signup {
+    top: 5%;
+    transform: translate(-50%, 0);
+    left: 50%;
   }
 }
 
-@media(max-width:570px){
-  form{
-    padding:0 1.5rem;
+@media (max-width: 570px) {
+  form {
+    padding: 0 1.5rem;
   }
 
-  .images{
-    display:none;
+  .images {
+    display: none;
   }
 
-  .panel .content{
-    padding:0.5rem 1rem;
+  .panel .content {
+    padding: 0.5rem 1rem;
   }
 
-  .login-container:before{
-    bottom:72%;
-    left:50%;
+  .login-container:before {
+    bottom: 72%;
+    left: 50%;
   }
 
-  .login-container.sign-up-mode:before{
-    bottom:28%;
-    left:50%;
+  .login-container.sign-up-mode:before {
+    bottom: 28%;
+    left: 50%;
   }
 }
