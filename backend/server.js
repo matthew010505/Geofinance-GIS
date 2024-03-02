@@ -14,19 +14,41 @@ app.post("/login", async (req, res) => {
   const { signUpEmail, signUpPassword } = req.body;
   const user = await SignUpModel.findOne({ signUpEmail: signUpEmail });
   if (user) {
-    if (user.signUpPassword === signUpPassword) {
-      res.json("Success");
-    } else {
-      res.json("the password is incorrect");
-    }
+    bcrypt.compare(
+      signUpPassword,
+      user.signUpPassword,
+      (err, passwordMatch) => {
+        if (err) {
+          console.error("Error during password comparison");
+          res.status(500).json({
+            message: "Internal Server Error",
+          });
+        } else {
+          if (passwordMatch) {
+            console.log("Login Successfully");
+            res.status(201).json({
+              message: "Login Successfully",
+            });
+          } else {
+            console.log("Password did not match");
+            res.status(401).json({
+              message: "Password did not match",
+            });
+          }
+        }
+      }
+    );
   } else {
-    res.json("No record existed");
+    res.status(401).json({
+      message: "Incorrect Email ID",
+    });
   }
 });
 
 app.post("/submit", async (req, res) => {
   try {
     console.log(req.body);
+    const { userName, signUpEmail, signUpPassword } = req.body;
 
     const hashedPassword = await bcrypt.hash(signUpPassword, 10);
 
@@ -36,34 +58,33 @@ app.post("/submit", async (req, res) => {
       signUpPassword: hashedPassword,
     });
 
-    /*
-    const login = new LoginModel({
-      email: req.body.email,
-      password: req.body.password,
-    });
-    */
-
-    /*
-    const user = await LoginModel.findOne({ email, password });
-
-    if (user) {
-      res.status(200).json({
-        message: "Login successful!",
-      });
-    } else {
+    //check if username exists
+    const username = await SignUpModel.findOne({ userName : userName});
+    if(username){
       res.status(401).json({
-        message: "Invalid credentials",
-      });
-    }
-    */
+        message:"UserName already Exists!",
+      })
+    }else{
+      //check if email exists
+      const uniqemail = await SignUpModel.findOne({ signUpEmail: signUpEmail});
+      if(uniqemail){
+        res.status(401).json({
+          message:"Email already Exists!",
+        })
+      }else{
+        const response = await SignUp.save();
 
-    const response = await SignUp.save();
-
-    if (response) {
-      console.log("data saved");
-      res.status(201).json({
-        message: "Data saved successfully!",
-      });
+        if (response) {
+          console.log("data saved");
+          res.status(201).json({
+            message: "Data saved successfully!",
+          });
+        } else{
+          res.status(401).json({
+            message: "Internal Server Error",
+          })
+        }
+      }
     }
   } catch (err) {
     console.log(err);

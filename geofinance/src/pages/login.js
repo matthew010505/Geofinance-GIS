@@ -78,20 +78,29 @@ export default function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5173/login", { 
-        signUpEmail, 
-        signUpPassword 
+      .post("http://localhost:5173/login", {
+        signUpEmail,
+        signUpPassword,
       })
 
       .then((result) => {
-        console.log(result);
-        if(result.data==="Success"){
-          window.alert("Logged in Successfully")
+        console.log(result.data);
+        const message = result.data.message;
+        if (message === "Login Successfully") {
+          window.alert("Logged in Successfully");
           navigate("/dashboard");
-        }else if(result.data==="the password is incorrect"){
-          window.alert("the password is incorrect");
-        }else{
+
+        } else if (message === "Error during password comparison") {
+          window.alert("Error during password comparison");
+
+        } else if (message === "Password did not match") {
+          window.alert("Incorrect password");
+
+        } else if (message === "No record existed") {
           window.alert("Invalid Credentials");
+          
+        } else if (message === "Incorrect Email ID") {
+          window.alert("Incorrect Email");
         }
       })
 
@@ -111,8 +120,21 @@ export default function Login() {
       })
 
       .then((result) => {
-        console.log(result);
-        navigate("/dashboard");
+        console.log(result.data);
+        const message=result.data.message;
+        if(message === "UserName already Exists!"){
+          window.alert("UserName already Exists!");
+
+        }else if(message === "Email already Exists!"){
+          window.alert("Email already Exists!");
+
+        }else if(message === "Data saved successfully!"){
+          window.alert("Signed Up Successfully!");
+          navigate("/dashboard");
+
+        }else if(message === "Internal Server Error"){
+          window.alert("Internal Server Error");
+        }
       })
 
       .catch((err) => {
