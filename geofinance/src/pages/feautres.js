@@ -1,12 +1,10 @@
-import React from "react";
-import Header from "../Components/Header";
-import Body from "../Components/body";
+import React, { Component } from 'react';
 
-export default function Feautres(){
-  return(
-    <div>
-      <Header></Header>
-      <Body></Body>
-    </div>
-  )
-}
+import Header from '../Components/Header';
+ export default function Feautres(){
+  <div>
+    <Header></Header>
+    
+  </div>
+
+ }
