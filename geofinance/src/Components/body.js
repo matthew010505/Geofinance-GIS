@@ -29,7 +29,7 @@ function Body() {
   }, []);
   return (
     <div class="body-container">
-      <div class="content">
+      {/* <div class="content">
         <h2 className="typing-text" ref={typingTextRef}>
           Welcome To{" "}
         </h2>
@@ -45,10 +45,10 @@ function Body() {
           digital divide, making financial information more accessible
           ultimately fostering financial inclusion and empowerment.
         </p>
-      </div>
+      </div> */}
       <div class="image-container">
         <img
-          src="https://msmeafricaonline.com/wp-content/uploads/2020/08/digital-finance.jpg"
+          src="/Sirsi, Karnataka.jpeg "
           alt="financialImage"
           class="finance"
         ></img>
