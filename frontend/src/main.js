@@ -1,28 +1,51 @@
-import Card from "./features";
+import Card from "./Components/features";
 import { motion } from "framer-motion";
+import { Link, Element } from "react-scroll";
+import { useNavigate } from "react-router-dom";
 
-const Main = () => {
+const App = () => {
+  const navigate = useNavigate();
   const cards = [
     {
-      imageUrl: "https://via.placeholder.com/300x200",
-      title: "Card 1",
-      features: ["Feature 1", "Feature 2", "Feature 3"],
+      imageUrl: "/financial.jpeg",
+      title: "Enhanced Access to Financial Services",
+      features: [" By bridging the gap between underserved communities and financial resources, we can promote financial inclusion and unlock opportunities for socioeconomic advancement"],
     },
     {
-      imageUrl: "https://via.placeholder.com/300x200",
-      title: "Card 2",
-      features: ["Feature 1", "Feature 2", "Feature 3"],
+      imageUrl: "outreach1.jpeg",
+      title: "Outreach Programs",
+      features: [" By bridging the gap between underserved communities and financial resources, we can promote financial inclusion and unlock opportunities for socioeconomic advancement"],
     },
     {
-      imageUrl: "https://via.placeholder.com/300x200",
-      title: "Card 3",
-      features: ["Feature 1", "Feature 2", "Feature 3"],
+      imageUrl: "infrastructure.jpeg",
+      title: "Mobile and Digital Platforms",
+      features: [" By bridging the gap between underserved communities and financial resources, we can promote financial inclusion and unlock opportunities for socioeconomic advancement"],
     },
+    {
+      imageUrl: "analytics.jpeg",
+      title: "Access to Performance Analytics",
+      features: [" By bridging the gap between underserved communities and financial resources, we can promote financial inclusion and unlock opportunities for socioeconomic advancement"],
+    },
+    
+    {
+      imageUrl: "Customer.jpeg",
+      title: "Enhanced Customer Engagement",
+      features: [" By bridging the gap between underserved communities and financial resources, we can promote financial inclusion and unlock opportunities for socioeconomic advancement"],
+    },
+    {
+      imageUrl: "productivity.jpeg",
+      title: "Increased Efficiency and Productivity",
+      features: [" By bridging the gap between underserved communities and financial resources, we can promote financial inclusion and unlock opportunities for socioeconomic advancement"],
+    },
+    
+    
+    
   ];
+
 
   return (
     <>
-      <div className="relative min-h-screen min-w-screen overflow-hidden">
+      <div id="main" className="relative min-h-screen min-w-screen overflow-hidden">
         <img src="/hehe.jpg" className="absolute inset-0 w-full h-full object-cover" alt="Background" />
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
           <motion.h1
@@ -43,7 +66,12 @@ const Main = () => {
             A digital Financial Platform for rural Indians, particularly Farmers, to enhance their digital financial engagement by virtual data using Geographic Informative System (GIS). By leveraging making financial information more accessible.
           </motion.p>
         </div>
+
         <nav className='absolute top-0 left-0 right-0 flex justify-between items-center w-full p-4 bg-white bg-opacity-25 backdrop-blur-sm z-10'>
+                  <div className="flex justify-start items-start">
+          <img 
+          className ="w-[180px] h-[90px]"src ="/grameen.png" />
+        </div>
           <ul className='text-white flex text-center justify-center w-full'>
             <motion.li
               initial={{ opacity: 0 }}
@@ -51,7 +79,7 @@ const Main = () => {
               transition={{ delay: 1.5, duration: 1 }}
               className='inline-block px-5'
             >
-              <a href="https://public.tableau.com/app/profile/kaviya.k1125/viz/gisreport/Dashboard2?publish=yes">Home</a>
+            <Link to="main" smooth={true} duration={500}>Home</Link>
             </motion.li>
             <motion.li
               initial={{ opacity: 0 }}
@@ -59,7 +87,7 @@ const Main = () => {
               transition={{ delay: 1.7, duration: 1 }}
               className='inline-block px-5'
             >
-              <a href="#">About</a>
+<Link to="what-we-do" smooth={true} duration={500}>About</Link>
             </motion.li>
             <motion.li
               initial={{ opacity: 0 }}
@@ -67,7 +95,7 @@ const Main = () => {
               transition={{ delay: 1.9, duration: 1 }}
               className='inline-block px-5'
             >
-              <a href="#">Features</a>
+            <Link to="features" smooth={true} duration={500}>Features</Link>
             </motion.li>
             <motion.li
               initial={{ opacity: 0 }}
@@ -75,7 +103,7 @@ const Main = () => {
               transition={{ delay: 2.1, duration: 1 }}
               className='inline-block px-5'
             >
-              <a href="#">Contact</a>
+            <Link to="footer" smooth={true} duration={500}>Contact</Link>
             </motion.li>
           </ul>
           <motion.button
@@ -83,7 +111,8 @@ const Main = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 2.3, duration: 1 }}
             className='bg-white px-4 py-2 rounded-md ml-auto'
-          >
+            onClick={() => navigate("/users")}>
+          
             Login
           </motion.button>
         </nav>
@@ -181,7 +210,7 @@ const Main = () => {
           @2024
         </motion.div>
       </div>
-      <section className="flex flex-row justify-between p-4">
+      <section id="what-we-do" className="flex flex-row justify-between p-4">
         <div className="flex:1 text-left">
           <motion.h1
             initial={{ opacity: 0, x: -50 }}
@@ -239,143 +268,94 @@ const Main = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 5, duration: 1 }}
         >
-          Our Services
+          Features
         </motion.h1>
       </div>
-      <div className="flex justify-center sm:gap-40">
+      <div id="features" className="grid grid-cols-3 sm:gap-40">
         {cards.map((card, index) => (
           <Card
             key={index}
             {...card}
+            
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 5.2 + index * 0.2, duration: 1 }}
           />
         ))}
       </div>
-      <div className="footer bottom-0">
-        <footer className="bg-black p-14 " aria-labelledby="footer-heading">
-          <h2 id="footer-heading" className="sr-only">Footer</h2>
-          <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
-            <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-              <div className="space-y-8">
-                <motion.img
-                  className="h-20"
-                  src="/aii.png"
-                  alt="Company name"
-                  initial={{ scale: 0.8 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 5.5, duration: 1 }}
-                />
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 5.7, duration: 1 }}
-                  className="text-sm leading-6 text-white"
-                >
-                  Making this website look better to the world and a more respectful generation.
-                </motion.p>
-                <div className="flex space-x-6">
-                  <a href="#" className="text-white hover:text-gray-500">
-                    <span className="sr-only">Facebook</span>
-                  </a>
-                  <a href="#" className="text-yellow-500 hover:text-gray-500">
-                    <span className="sr-only">the team is on fire</span>
-                  </a>
-                  <a href="#" className="text-white hover:text-blue-400">
-                    <span className="sr-only">X</span>
-                  </a>
-                  <a href="#" className="text-white hover:text-gray-500">
-                    <span className="sr-only">GitHub</span>
-                  </a>
-                  <a href="#" className="text-white hover:text-gray-500">
-                    <span className="sr-only">YouTube</span>
-                  </a>
-                </div>
-              </div>
-              <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-                <div className="md:grid md:grid-cols-2 md:gap-8">
-                  <div>
-                    <h3 className="text-sm font-semibold leading-6 text-white">Solutions</h3>
-                    <ul role="list" className="mt-6 space-y-4">
-                      <li>
-                        <a href="#" className="text-sm leading-6 text-white hover:text-gray-900">Marketing</a>
-                      </li>
-                      <li>
-                        <a href="#" className="text-sm leading-6 text-white hover:text-gray-900">Analytics</a>
-                      </li>
-                      <li>
-                        <a href="#" className="text-sm leading-6 text-white hover:text-gray-900">Commerce</a>
-                      </li>
-                      <li>
-                        <a href="#" className="text-sm leading-6 text-white hover:text-gray-900">Insights</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="mt-10 md:mt-0">
-                    <h3 className="text-sm font-semibold leading-6 text-white">Support</h3>
-                    <ul role="list" className="mt-6 space-y-4">
-                      <li>
-                        <a href="#" className="text-sm leading-6 text-white hover:text-gray-900">Pricing</a>
-                      </li>
-                      <li>
-                        <a href="#" className="text-sm leading-6 text-white hover:text-gray-900">Documentation</a>
-                      </li>
-                      <li>
-                        <a href="#" className="text-sm leading-6 text-white hover:text-gray-900">Guides</a>
-                      </li>
-                      <li>
-                        <a href="#" className="text-sm leading-6 text-white hover:text-gray-900">API Status</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="md:grid md:grid-cols-2 md:gap-8">
-                  <div>
-                    <h3 className="text-sm font-semibold leading-6 text-white">Company</h3>
-                    <ul role="list" className="mt-6 space-y-4">
-                      <li>
-                        <a href="#" className="text-sm leading-6 text-white hover:text-gray-900">About</a>
-                      </li>
-                      <li>
-                        <a href="#" className="text-sm leading-6 text-white hover:text-gray-900">Blog</a>
-                      </li>
-                      <li>
-                        <a href="#" className="text-sm leading-6 text-white hover:text-gray-900">Jobs</a>
-                      </li>
-                      <li>
-                        <a href="#" className="text-sm leading-6 text-white hover:text-gray-900">Press</a>
-                      </li>
-                      <li>
-                        <a href="#" className="text-sm leading-6 text-white hover:text-gray-900">Partners</a>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="mt-10 md:mt-0">
-                    <h3 className="text-sm font-semibold leading-6 text-white">Legal</h3>
-                    <ul role="list" className="mt-6 space-y-4">
-                      <li>
-                        <a href="#" className="text-sm leading-6 text-white hover:text-gray-900">Claim</a>
-                      </li>
-                      <li>
-                        <a href="#" className="text-sm leading-6 text-white hover:text-gray-900">Privacy</a>
-                      </li>
-                      <li>
-                        <a href="#" className="text-sm leading-6 text-white hover:text-gray-900">Terms</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
-              <p className="text-xs leading-5 text-white">&copy; 2020 EDU AI, Inc. All rights reserved.</p>
-            </div>
-          </div>
-        </footer>
+      <br/>
+      <div className="relative bg-black">
+      <div className="absolute inset-x-0 bottom-0">
+        <svg viewBox="0 0 224 12" fill="currentColor" className="w-full -mb-1 text-white" preserveAspectRatio="none">
+          <path d="M0,0 C48.8902582,6.27314026 86.2235915,9.40971039 112,9.40971039 C137.776408,9.40971039 175.109742,6.27314026 224,0 L224,12.0441132 L0,12.0441132 L0,0 Z" />
+        </svg>
       </div>
+      <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+        <div className="relative max-w-2xl sm:mx-auto sm:max-w-xl md:max-w-2xl sm:text-center">
+          <h2 className="mb-6 font-sans text-3xl text-center font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
+            Subscribe to our newsletter
+          </h2>
+          <p className="mb-6 text-base text-indigo-200 md:text-lg">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+            rem aperiam, eaque ipsa quae. explicabo. Sed ut perspiciatis unde omnis.
+          </p>
+          <form className="flex flex-col items-center w-full mb-4 md:flex-row md:px-16">
+            <input
+              placeholder="Email"
+              required=""
+              type="text"
+              className="flex-grow w-full h-12 px-4 mb-3 text-white transition duration-200 border-2 border-transparent rounded appearance-none md:mr-2 md:mb-0 bg-deep-purple-900 focus:border-teal-accent-700 focus:outline-none focus:shadow-outline"
+            />
+            <button
+              className="inline-flex items-center justify-center w-full h-12 px-6 font-semibold tracking-wide text-gray-200 transition duration-200 rounded shadow-md md:w-auto hover:text-deep-purple-900 bg-teal-accent-400 hover:bg-teal-accent-700 focus:shadow-outline focus:outline-none"
+            >
+              Subscribe
+            </button>
+          </form>
+          <p className="max-w-md mb-10 text-xs tracking-wide text-indigo-100 sm:text-sm sm:mx-auto md:mb-16">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
+          </p>
+          <footer class="flex flex-col space-y-10 justify-center m-10">
+
+    <nav class="flex justify-center flex-wrap gap-6 text-gray-500 font-medium">
+        <a class="hover:text-gray-900" href="#">Home</a>
+        <a class="hover:text-gray-900" href="#">About</a>
+        <a class="hover:text-gray-900" href="#">Services</a>
+        <a class="hover:text-gray-900" href="#">Media</a>
+        <a class="hover:text-gray-900" href="#">Gallery</a>
+        <a class="hover:text-gray-900" href="#">Contact</a>
+    </nav>
+
+    <div class="flex justify-center space-x-5">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.icons8.com/fluent/30/000000/facebook-new.png" />
+        </a>
+        <a href="https://www.linkedin.com/company/grameen-foundation-india/" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.icons8.com/fluent/30/000000/linkedin-2.png" />
+        </a>
+        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.icons8.com/fluent/30/000000/instagram-new.png" />
+        </a>
+        <a href="https://messenger.com" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.icons8.com/fluent/30/000000/facebook-messenger--v2.png" />
+        </a>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+            <img src="https://img.icons8.com/fluent/30/000000/twitter.png" />
+        </a>
+    </div>
+    <p class="text-center text-white font-medium">&copy; 2022 Company Ltd. All rights reservered.</p>
+</footer>
+          <a href="/" aria-label="Scroll down" className="flex items-center justify-center w-10 h-10 mx-auto text-white duration-300 transform border border-gray-400 rounded-full hover:text-teal-accent-400 hover:border-teal-accent-400 hover:shadow hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+              <path d="M10.293,3.293,6,7.586,1.707,3.293A1,1,0,0,0,.293,4.707l5,5a1,1,0,0,0,1.414,0l5-5a1,1,0,1,0-1.414-1.414Z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    
     </>
   );
 }
 
-export default Main;
+export default App;

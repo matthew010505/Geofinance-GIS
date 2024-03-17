@@ -12,9 +12,7 @@ import {
   faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "../Components/login.css";
-import logImage from "../images/log.svg";
-import registerImage from "../images/register.svg";
+import "./login.css";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
@@ -157,7 +155,7 @@ export default function Login() {
             <div class="input-feild">
               <FontAwesomeIcon icon={faEnvelope} className="input-icons" />
               <input
-                type="email"
+                type="text"
                 id="email"
                 name="email"
                 value={signUpEmail}
@@ -319,7 +317,7 @@ export default function Login() {
                 Sign Up
               </button>
             </div>
-            <img src={logImage} class="images" alt="logo"></img>
+            <img src="/log.svg" class="images" alt="logo"></img>
           </div>
           <div class="panel right-panel">
             <div class="content">
@@ -329,7 +327,7 @@ export default function Login() {
                 Sign In
               </button>
             </div>
-            <img src={registerImage} class="images" alt="register"></img>
+            <img src="/register.svg" class="images" alt="register"></img>
           </div>
         </div>
       </div>

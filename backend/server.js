@@ -3,12 +3,13 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const SignUpModel = require("./models/Signup");
 const bcrypt = require("bcryptjs");
+require('dotenv').config();
 
 const app = express();
 app.use(express.json());
 app.use(cors());
 
-mongoose.connect("mongodb://127.0.0.1:27017/Users");
+mongoose.connect(process.env.ATLAS_URL);
 
 app.post("/login", async (req, res) => {
   const { signUpEmail, signUpPassword } = req.body;

@@ -14,12 +14,7 @@
   align-items: center;
   justify-content: space-between;
   margin: 0 0 20px 0;
-  /*background-color: #8ec5fc;  
-  background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);*/
-  /*background-color: #0093E9;
-  background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-  */
-  /*#b7c9f2;*/
+
 }
 
 ul {
@@ -66,10 +61,7 @@ ul {
   margin: 20px; 
 }
 
-/* .image-container .finance {
-  width: 500px;
-  height: 330px;
-} */
+
 
 .body-container .content {
   display: flex;
