@@ -9,7 +9,7 @@ npm i axios framer-motion react-scroll reacr-router-dom powerbi-client-react
 ## Dependencies to be installed in backend 
 
 ```
-npm i bcryptjs cors express mongoose nodemon
+npm i bcryptjs cors express mongoose nodemon dotenv
 ```
 
 ## Dot env folder structure
