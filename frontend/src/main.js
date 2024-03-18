@@ -9,33 +9,33 @@ const App = () => {
     {
       imageUrl: "/financial.jpeg",
       title: "Enhanced Access to Financial Services",
-      features: [" By bridging the gap between underserved communities and financial resources, we can promote financial inclusion and unlock opportunities for socioeconomic advancement"],
+      features: [" Enhanced access to financial services is pivotal in promoting financial inclusion and unlocking opportunities for socioeconomic advancement."],
     },
     {
       imageUrl: "outreach1.jpeg",
       title: "Outreach Programs",
-      features: [" By bridging the gap between underserved communities and financial resources, we can promote financial inclusion and unlock opportunities for socioeconomic advancement"],
+      features: [" By promoting financial inclusion and unlocking opportunities for socioeconomic advancement, these programs empower individuals to access the resources and support they need to thrive in the economy."],
     },
     {
       imageUrl: "infrastructure.jpeg",
       title: "Mobile and Digital Platforms",
-      features: [" By bridging the gap between underserved communities and financial resources, we can promote financial inclusion and unlock opportunities for socioeconomic advancement"],
+      features: ["Through their convenience and accessibility, they empower individuals to navigate the financial landscape effectively, driving economic development and prosperity."],
     },
     {
       imageUrl: "analytics.jpeg",
       title: "Access to Performance Analytics",
-      features: [" By bridging the gap between underserved communities and financial resources, we can promote financial inclusion and unlock opportunities for socioeconomic advancement"],
+      features: [". Empowering individuals with such data enables informed decision-making, ultimately contributing to economic growth and prosperity in marginalized regions."],
     },
     
     {
       imageUrl: "Customer.jpeg",
       title: "Enhanced Customer Engagement",
-      features: [" By bridging the gap between underserved communities and financial resources, we can promote financial inclusion and unlock opportunities for socioeconomic advancement"],
+      features: [" By fostering stronger connections and interactions, it unlocks opportunities for individuals to access essential financial services and participate actively in economic growth."],
     },
     {
       imageUrl: "productivity.jpeg",
       title: "Increased Efficiency and Productivity",
-      features: [" By bridging the gap between underserved communities and financial resources, we can promote financial inclusion and unlock opportunities for socioeconomic advancement"],
+      features: [" By streamlining processes and maximizing output, they promote financial inclusion and open doors to socioeconomic advancement"],
     },
     
     
@@ -268,7 +268,7 @@ const App = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 5, duration: 1 }}
         >
-          Features
+          Highlights
         </motion.h1>
       </div>
       <div id="features" className="grid grid-cols-3 sm:gap-40">
@@ -296,8 +296,7 @@ const App = () => {
             Subscribe to our newsletter
           </h2>
           <p className="mb-6 text-base text-indigo-200 md:text-lg">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-            rem aperiam, eaque ipsa quae. explicabo. Sed ut perspiciatis unde omnis.
+          Stay informed with the latest updates from Geofinance! Subscribe to our newsletter and be the first to know about new features, insights, and special offers.
           </p>
           <form className="flex flex-col items-center w-full mb-4 md:flex-row md:px-16">
             <input
@@ -312,8 +311,8 @@ const App = () => {
               Subscribe
             </button>
           </form>
-          <p className="max-w-md mb-10 text-xs tracking-wide text-indigo-100 sm:text-sm sm:mx-auto md:mb-16">
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
+          <p className="max-w-md mb-10 text-xs tracking-wide text-indigo-100 sm:text-l sm:mx-auto md:mb-16">
+            Feel free to contact us
           </p>
           <footer class="flex flex-col space-y-10 justify-center m-10">
 
@@ -327,23 +326,27 @@ const App = () => {
     </nav>
 
     <div class="flex justify-center space-x-5">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.facebook.com/StopPovertyNow/" target="_blank" rel="noopener noreferrer">
             <img src="https://img.icons8.com/fluent/30/000000/facebook-new.png" />
         </a>
         <a href="https://www.linkedin.com/company/grameen-foundation-india/" target="_blank" rel="noopener noreferrer">
             <img src="https://img.icons8.com/fluent/30/000000/linkedin-2.png" />
         </a>
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.instagram.com/grameen_foundation/" target="_blank" rel="noopener noreferrer">
             <img src="https://img.icons8.com/fluent/30/000000/instagram-new.png" />
         </a>
-        <a href="https://messenger.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.facebook.com/StopPovertyNow/" target="_blank" rel="noopener noreferrer">
             <img src="https://img.icons8.com/fluent/30/000000/facebook-messenger--v2.png" />
         </a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://twitter.com/GrameenFdn" target="_blank" rel="noopener noreferrer">
             <img src="https://img.icons8.com/fluent/30/000000/twitter.png" />
         </a>
     </div>
-    <p class="text-center text-white font-medium">&copy; 2022 Company Ltd. All rights reservered.</p>
+    <p class="text-center text-white font-medium">&copy; 2024 Grameen Foundation Ltd. All rights reserved.
+Grameen Foundation is a registered trademark.
+|
+Grameen Foundation is a 501(c) (3) non-profit organization.
+.</p>
 </footer>
           <a href="/" aria-label="Scroll down" className="flex items-center justify-center w-10 h-10 mx-auto text-white duration-300 transform border border-gray-400 rounded-full hover:text-teal-accent-400 hover:border-teal-accent-400 hover:shadow hover:scale-110">
             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="currentColor">

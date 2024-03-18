@@ -20,7 +20,7 @@ const Card = ({ imageUrl, title, features }) => {
   {features && (
     <ul className="text-gray-700">
       {features.map((feature, index) => (
-        <li key={index} className="mb-2 text-center">
+        <li key={index} className="mb-2 text-[18px] text-center">
           <span className="hidden">{feature}</span>
           <span className="hover:inlsine">{feature}</span>
         </li>
