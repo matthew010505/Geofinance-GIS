@@ -9,7 +9,7 @@
 **Tech Stack and Data & Charts**
 
 - **Data Visualiztion** <!-- Frontend repository -->
-  - [Data Visualization README](https://github.com/Sai-Dithvika/Grameen-Foundation/blob/main/frontend/Navigation.md) <!-- Link to frontend README -->
+  - [Data Visualization README](https://github.com/Sai-Dithvika/Grameen-Foundation/blob/main/frontend/Data-Visualization.md) <!-- Link to frontend README -->
 
 
 - **Frontend** <!-- Backend repository -->
