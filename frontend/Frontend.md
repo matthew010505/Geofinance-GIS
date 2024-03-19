@@ -1,5 +1,5 @@
-<div align ="center">
-  <img src ="https://github.com/Sai-Dithvika/Grameen-Foundation/assets/118179484/354149a7-4f2a-4c20-a04a-32d558abcf9d" width ="170 px" />
+<div align = "center">
+ <img src ="https://github.com/Sai-Dithvika/Grameen-Foundation/assets/118179484/354149a7-4f2a-4c20-a04a-32d558abcf9d" width ="170 px" />
 </div>  
 
 <div align ="center">
@@ -16,6 +16,7 @@ The frontend of this project is built using a combination of modern web technolo
 - **Tailwind CSS**: A utility-first CSS framework that provides low-level utility classes to build custom designs without leaving your HTML. Tailwind CSS is used for styling the UI components, ensuring a consistent and responsive design across different devices.
 
 - **Framer Motion**: A production-ready motion library for React, enabling developers to add animations and transitions to their React applications with ease. Framer Motion is used to create smooth and engaging animations, enhancing the user experience and making the application more dynamic.
+![image](https://github.com/Sai-Dithvika/Grameen-Foundation/assets/118179484/97c20fb5-cc5b-4f74-affd-f333818ecf8f)
 
 - **Axios**: A promise-based HTTP client for the browser and Node.js, used to make asynchronous HTTP requests to REST endpoints. Axios is used in this project to fetch data from APIs, allowing us to dynamically load and display content in the application.
 
