@@ -49,7 +49,7 @@ This visualization combines the seasonality of crops with the prevalence of each
 <br />
 <br />
 <br />
-<a href="https://github.com/Sai-Dithvika/Grameen-Foundation/blob/main/frontend/Navigation.md"><b> Continue Reading . . .</b></a>
+  <a href="https://github.com/Sai-Dithvika/Grameen-Foundation/blob/main/frontend/Navigation.md"><img src="https://github.com/t-aswath/mdeditor/assets/119417646/d9574fc2-aa05-4492-b23b-aa9f3e31c60d"></a>
 
 
 
