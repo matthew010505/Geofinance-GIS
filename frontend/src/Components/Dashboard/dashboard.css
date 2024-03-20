@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 120vw;
+  height: 120vh;
+  border: 1px solid black;
+}
+
+.filter-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 21vw;
+  height: 100vh;
+  margin-top: 20px;
+}
+
+.pincode-container,
+.state-container,
+.season-container,
+.gender-container,
+.crop-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  border: 1px solid black;
+  margin-top: 10px;
+  border-radius: 5%;
+  padding: 5px;
+  padding-right: 20px;
+  padding-left: 10px;
+}
+
+.leaflet-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 120vh;
+  border: 1px solid black;
+}
+
+.pincode,
+.state,
+.crop,
+.season,
+.gender,
+select {
+  width: 250px;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 16px;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.pincode:focus,
+.state:focus,
+.crop:focus,
+.season:focus,
+.gender:focus,
+select:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.buttons1 {
+  width: 80px;
+  height: 30px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: mediumseagreen;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.buttons:hover {
+  background-color: darkgreen;
+}
