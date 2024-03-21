@@ -27,6 +27,9 @@ Data-based visualization platform tailored for rural indians
   ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white)  ![Warehousing Data](https://img.shields.io/badge/Warehousing_Data-000000?style=for-the-badge&logo=warehousing&logoColor=white)  ![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white)
   ![Fivetran](https://img.shields.io/badge/Fivetran-000000?style=for-the-badge&logo=fivetran&logoColor=white)
 
+## Flow of the Web Application
+![image](https://github.com/Sai-Dithvika/Grameen-Foundation/assets/118179484/7bfe306b-26c0-4241-9bad-8ecd22db0e40)
+
 
 # Data Visualization Overview
 This repository contains 10 data visualization images that provide insights into various aspects of agricultural data. Each visualization is designed to highlight specific trends, patterns, or insights that can be derived from the data.
