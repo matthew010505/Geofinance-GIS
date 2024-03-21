@@ -7,7 +7,7 @@
 Data-based visualization platform tailored for rural indians
 
 
-# 🚀 Problem Approach
+# 🚀 Solution Approach
 - **📘 Development of user-friendly:** Developing a  GIS-based platform for visualizing financial data along with information of nearby BC agents with their corresponding details
 - **🤖 Awareness in rural communities:** Launching outreach programs for training and awareness in rural communities.
 - **🌱 Empower individuals:** Combined approach to make technology accessible and empower individuals with necessary skills.
