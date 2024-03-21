@@ -3,9 +3,9 @@
 </div>  
 
 # 🌟 Problem Statement
-- Access to digitaal finance services remains a challenge for amny rural indians, particularly farmers who form a significant portion of the population. The concept note aims to develop a **Geographical Information System (GIS)**
+- Access to digital finance services remains a challenge for many rural indians, particularly farmers who form a significant portion of the population. The concept note aims to develop a **Geographical Information System (GIS)**
 Data-based visualization platform tailored for rural indians
--This platof
+
 
 # 🚀 Problem Approach
 - **📘 Development of user-friendly:** Developing a  GIS-based platform for visualizing financial data along with information of nearby BC agents with their corresponding details
@@ -13,7 +13,7 @@ Data-based visualization platform tailored for rural indians
 - **🌱 Empower individuals:** Combined approach to make technology accessible and empower individuals with necessary skills.
 - **💡Digital finance platform:**Aim to foster widespread adoption of digital finance platform in rural India
 
-## 💡 Why chose us
+## 💡 Why choose us
 - Proposed GIS based visualization platform
 - Aim to enhance digital financial engagemnt in rural india
 - Integration of GIS technology and user friendly interfaces
@@ -21,14 +21,15 @@ Data-based visualization platform tailored for rural indians
 
 ## Technology used
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white)  ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)  ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-  ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)  ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)  ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+  ![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)  ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) 
   ![API](https://img.shields.io/badge/API-000000?style=for-the-badge&logo=api&logoColor=white)  ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)  ![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
   ![JSON](https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white)  ![bcrypt](https://img.shields.io/badge/bcrypt-000000?style=for-the-badge&logo=bcrypt&logoColor=white)  ![Leaflet](https://img.shields.io/badge/Leaflet-008200?style=for-the-badge&logo=leaflet&logoColor=white)  ![AppScript](https://img.shields.io/badge/AppScript-4285F4?style=for-the-badge&logo=google-apps-script&logoColor=white)
   ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white)  ![Warehousing Data](https://img.shields.io/badge/Warehousing_Data-000000?style=for-the-badge&logo=warehousing&logoColor=white)  ![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white)
   ![Fivetran](https://img.shields.io/badge/Fivetran-000000?style=for-the-badge&logo=fivetran&logoColor=white)
 
 ## Flow of the Web Application
-![image](https://github.com/Sai-Dithvika/Grameen-Foundation/assets/118179484/7bfe306b-26c0-4241-9bad-8ecd22db0e40)
+![image](https://github.com/Sai-Dithvika/Grameen-Foundation/assets/118179484/1355085c-ef9e-434f-80cb-dfeec70454a3)
+
 
 
 # Data Visualization Overview
