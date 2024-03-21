@@ -13,7 +13,7 @@ Data-based visualization platform tailored for rural indians
 - **🌱 Empower individuals:** Combined approach to make technology accessible and empower individuals with necessary skills.
 - **💡Digital finance platform:**Aim to foster widespread adoption of digital finance platform in rural India
 
-## 💡 Why choose us
+## 💡 Why choose us?
 - Proposed GIS based visualization platform
 - Aim to enhance digital financial engagemnt in rural india
 - Integration of GIS technology and user friendly interfaces
